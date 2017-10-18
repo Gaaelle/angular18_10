@@ -1,12 +1,46 @@
 <div style="text-align:center">
+
   <h1>
     {{title}}
   </h1>
+
   <input type="text" [(ngModel)]="title">
+
   <p>{{ title }}</p>
+
+  {{ 1+1 }}
+  {{ 'String binding' }} <br>
+  <!-- {{ {name: 'toto'} | json }} <br> -->
+
+  <!-- style tout seul fonctionne pas, il faut préciser  -->
+  <p [innerHTML]="'Proprety binding'" [style.color]="'blue'"></p>
+  <!-- le HIDDEN cache la checkbox, passer à false pour voir -->
+  <input type="checkbox" [checked]="1 == 2" [hidden]="5 != 4">
+
+  <hr>
+  <!-- <button (click)="title='On change le title avec le button'">Event binding</button> -->
+  <button (click)="clickMe()">Event binding</button>
+
+  <hr>
+  <input type="text" class="form-control" [(ngModel)]='name' placeholder="Two Ways [(ngModel)]"> <!-- METHODE 2 WAYS -->
+  <input type="text" class="form-control" (input)="updateName($event)" placeholder="Event binding (input)"> <!--METHODE 1 WAY || $event = pour transmettre l'event courant -->
+
+  {{ name }}
+
+  <hr>
+
+  <button class="btn btn-primary" (click)="onOff()">{{ onOffVar }}</button>
+
 </div>
+
 <div class="container">
   <div class="jumbotron">
+
     <app-hello></app-hello>
+
   </div>
+</div>
+
+<div class="container">
+  <app-twitter></app-twitter>
 </div>
