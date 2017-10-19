@@ -9,6 +9,7 @@ export class AppComponent {
   title = "c'est le title";
   name = "";
   onOffVar = "Off";
+  btnStatus: boolean=false;
 
   clickMe(): void {
     this.title = "On change le title avec la function";

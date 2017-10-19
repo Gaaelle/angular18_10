@@ -29,7 +29,9 @@
 
   <hr>
 
-  <button class="btn btn-primary" (click)="onOff()">{{ onOffVar }}</button>
+  <button class="btn btn-success" (click)="onOff()">{{ onOffVar }}</button>
+  <button class="btn btn-danger"(click)="btnStatus=!btnStatus">{{btnStatus ? 'Off' : 'On'}}</button> <!-- autre manière de faire le button on off -->
+
 
 </div>
 
@@ -43,4 +45,8 @@
 
 <div class="container">
   <app-twitter></app-twitter>
+</div>
+
+<div class="container">
+  <app-todo></app-todo>
 </div>
