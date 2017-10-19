@@ -10,6 +10,7 @@ export class AppComponent {
   name = "";
   onOffVar = "Off";
   btnStatus: boolean=false;
+  showDemo = false;
 
   clickMe(): void {
     this.title = "On change le title avec la function";
@@ -29,4 +30,8 @@ export class AppComponent {
     }
 
   }
+
+    demo() {
+      this.showDemo = !this.showDemo;
+    }
 }

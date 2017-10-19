@@ -4,13 +4,18 @@
     {{title}}
   </h1>
 
-  <input type="text" [(ngModel)]="title">
+  <input type="text" [(ngModel)]="title" #myField>
+  {{ myField.value.length }}
 
   <p>{{ title }}</p>
 
   {{ 1+1 }}
   {{ 'String binding' }} <br>
   <!-- {{ {name: 'toto'} | json }} <br> -->
+
+  <hr>
+    <app-echo></app-echo>
+  <hr>
 
   <!-- style tout seul fonctionne pas, il faut préciser  -->
   <p [innerHTML]="'Proprety binding'" [style.color]="'blue'"></p>
@@ -37,19 +42,23 @@
 
 <div class="container">
   <div class="jumbotron">
-
     <app-hello></app-hello>
-
   </div>
-</div>
 
-<div class="container">
   <app-twitter></app-twitter>
-</div>
 
-<div class="container">
   <app-todo></app-todo>
-</div>
-<div class="container">
   <app-todo></app-todo>
+
+  <button (click)="demo()" class="btn btn-warning">Démo</button>
+  <p class="well" *ngIf="showDemo; else myTemplate"> <!-- si false, ne se génère pas, n'apparaît pas dans le DOM, si true, est généré dans le DOM-->
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+  </p>
+
+  <ng-template #myTemplate>
+    <h3>test</h3>
+  </ng-template>
+
+  <hr>
+
 </div>
