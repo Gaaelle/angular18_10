@@ -1,3 +1,22 @@
-<p>
-  lolmdr
-</p>
+<div class="jumbotron">
+  <div class="row">
+    <div class="form-group">
+      <input type="text"
+      class="form-control"
+      placeholder="Write a task"
+      (keyup)="addTask($event)"
+      [(ngModel)]="taskText">
+      <span class="help-box">Nb chars {{ taskText.length }}</span>
+    </div>
+    <ul class="list-group">
+      <li *ngFor="let task of tasks; let i = index" class="list-group-item">
+        <span [ngClass]="{checked: task.done}">{{ task.title }}</span>
+        <i class="glyphicon glyphicon-trash pull-right" (click)="removeTask(i)"></i>
+        <input [(ngModel)]='task.done'
+        type="checkbox"
+        class="pull-right">
+      </li>
+    </ul>
+    <span class="help-box">You made {{ tasksDone() }} tasks out of {{ tasks.length }}</span>
+  </div>
+</div>
