@@ -1,4 +1,10 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import {
+  Component,
+  OnInit,
+  Input,
+  Output,
+  EventEmitter
+} from '@angular/core';
 import { Message } from '../message.model';
 
 @Component({
@@ -7,6 +13,8 @@ import { Message } from '../message.model';
   styleUrls: ['./message.component.css']
 })
 export class MessageComponent implements OnInit {
+
+  @Input() simpleValue: string;
 
   @Output() createMessage = new EventEmitter<Message>();
   msg: Message = new Message('');
