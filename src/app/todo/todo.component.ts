@@ -23,9 +23,7 @@ export class TodoComponent implements OnInit {
     // .do equivalant de |do(function (data) {
     // console.log(data); // })
     this.http.get('app/api/tasks.json')
-     .do(data => console.log(data))
-     .map(tasks => tasks.json())
-     .subscribe(data => this.jsonTask = data);
+     .subscribe(response => this.jsonTask = response.json());
   }
 
   addTask(event: KeyboardEvent) {
